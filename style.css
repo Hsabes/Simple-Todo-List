@@ -1,0 +1,49 @@
+header {
+    text-align: center;
+    font-size: 24px
+}
+
+body {
+    background-color: #FDFBF2;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+}
+
+.list-style {
+    /* list-style: none; */
+}
+
+#todo-form {
+    text-align: center;
+}
+
+.form-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.block-style {
+    background-color: #C18C5D;
+    width: 400px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.hover-test {
+    font-size: 25px;
+}
+
+.hover-test:hover {
+    color: white;
+}
+
+.hover-test:not(:hover) {
+    color: black;
+}

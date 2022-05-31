@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <title>To-Do List</title>
-        <link rel="stylesheet" href="" />
+        <link rel="stylesheet" href="./style.css" />
         <meta charset="UTF-8">
         <script defer src=""></script>
     </head>
@@ -12,20 +12,45 @@
             <h1>TO-DO LIST</h1>
         </header>
         <div id="container">
-            <nav id="preset-todo-list">
-                <!-- Place preset to-do items here -->
+            <nav id="preset-todo-list" class="block-style">
+                <h2>Preset Tasks</h2>
+                <ul id="preset-tasks" class="list-style">
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                   
+
+                </ul>
             </nav>
-            <div>
-                <ul id="personal-todo-list">
-                    <!-- append li tags here -->
+            <div id="personal-container" class="block-style">
+                <h2>Current Tasks</h2>
+                <ul id="personal-todo-list" class="list-style">
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
                 </ul>
                 <form id="todo-form">
-                    <!--  -->
-                    <input id="custom-todo" type="text">
-                    <input type="submit">
+                    <input id="custom-todo" class="form-input" type="text">
+                    <input class="form-input" type="submit">
                 </form>
             </div>
-            <!-- <div id="timer"></div> -->
+            <div id="timer" class="block-style">
+                <h2>Timer</h2> 
+                <ul class="list-style">
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                    <li class="hover-test">test</li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
