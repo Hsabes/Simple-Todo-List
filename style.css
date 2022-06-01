@@ -11,6 +11,10 @@ h2 {
     text-align: center;
 }
 
+h4 {
+    text-align: center;
+}
+
 #container {
     display: flex;
     justify-content: space-evenly;
@@ -26,14 +30,22 @@ h2 {
 }
 
 .form-input {
-    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .block-style {
     background-color: #C18C5D;
     width: 400px;
+}
+
+.block-style:hover {
+    box-shadow: 5px 5px 10px black;
     border-radius: 15px 15px 15px 15px;
+    transition: 1s;
+}
+
+.block-style:not(:hover) {
+    transition: 1s;
 }
 
 .hover-test {
@@ -42,6 +54,7 @@ h2 {
 
 .hover-test:hover {
     color: white;
+    transition: 0.25s;
 }
 
 .hover-test:not(:hover) {
