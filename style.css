@@ -51,7 +51,7 @@ h4 {
 
 .block-style:hover {
     box-shadow: 5px 5px 10px black;
-    border-radius: 15px 15px 15px 15px;
+    /* border-radius: 15px 15px 15px 15px; */
     transition: 1s;
 }
 
@@ -94,10 +94,3 @@ button:not(:hover) {
     opacity: 25%;
     transition: 0.25s;
 }
-
-
-
-
-/* create a div around each of our three objects */
-/* set the height and width to be equal for all three */
-/* follow instructions on stack overflow to hide the scroll bar */
