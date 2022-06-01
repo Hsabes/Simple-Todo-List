@@ -72,6 +72,10 @@ h4 {
     color: black;
 }
 
+#personal-container {
+    overflow: scroll;
+}
+
 .personal-list-li {
     font-size: 25px;
 }
@@ -90,3 +94,10 @@ button:not(:hover) {
     opacity: 25%;
     transition: 0.25s;
 }
+
+
+
+
+/* create a div around each of our three objects */
+/* set the height and width to be equal for all three */
+/* follow instructions on stack overflow to hide the scroll bar */
