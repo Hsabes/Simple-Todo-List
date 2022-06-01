@@ -30,14 +30,9 @@ todoPostForm.addEventListener(`submit`, (e) => {
             li.classList.add("hover-test"); 
             li.textContent = e.target.input.value;
             todosContainer.append(li);
+            addToTasks(li);
         })
 })
-
-//Timer that counts upwards
-let counterOneID = setInterval(counterOne, 1000);
-let counterTenID = setInterval(counterTen, 10000);
-let counterMinuteOneID = setInterval(counterMinuteOne, 60000);
-let counterMinuteTenID = setInterval(counterMinuteTen, 600000);
 
 fetch(url)
     .then(res => res.json())
@@ -47,21 +42,31 @@ fetch(url)
             li.classList.add("hover-test");
             todosContainer.append(li);
             li.textContent = todo.task;
-            li.addEventListener('click', () => {
-                removeButton = document.createElement('button');
-                removeButton.textContent = '❌';
-                liPersonal = document.createElement('li');
-                liPersonal.classList.add('personal-list-li');
-                liPersonal.textContent = todo.task;
-                liPersonal.append(removeButton);
-                personalTodos.append(liPersonal);
-
-                removeButton.addEventListener('click', (e) => {
-                    e.target.parentNode.remove();
-                })
-            })
+            addToTasks(li);
         })
     })
+
+function addToTasks(li) {
+    li.addEventListener('click', () => {
+        removeButton = document.createElement('button');
+        removeButton.textContent = '❌';
+        liPersonal = document.createElement('li');
+        liPersonal.classList.add('personal-list-li');
+        liPersonal.textContent = li.textContent;
+        liPersonal.append(removeButton);
+        personalTodos.append(liPersonal);
+
+        removeButton.addEventListener('click', (e) => {
+            e.target.parentNode.remove();
+        })
+    })
+}
+
+//Timer that counts upwards
+let counterOneID = setInterval(counterOne, 1000);
+let counterTenID = setInterval(counterTen, 10000);
+let counterMinuteOneID = setInterval(counterMinuteOne, 60000);
+let counterMinuteTenID = setInterval(counterMinuteTen, 600000);
 
 function counterOne() {
     const counter = document.querySelector("#one-second");
