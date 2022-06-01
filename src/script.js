@@ -10,8 +10,27 @@ const url = 'http://localhost:3000/todos'
 
 todoPostForm.addEventListener(`submit`, (e) => {
     e.preventDefault();
-    const todoInput = document.getElementById(`custom-todo`)
-    fetch(url, {"method":"POST", "header":"application-json", "body":JSON.stringify(todoInput.value)})
+    // const todoInput = document.getElementById(`custom-todo`)
+    // let taskInput = {
+    //     task: e.target.input.value
+    // }
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            task: e.target.input.value
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            const li = document.createElement('li');
+            li.classList.add("hover-test"); 
+            li.textContent = e.target.input.value;
+            todosContainer.append(li);
+        })
 })
 
 //Timer that counts upwards
@@ -23,9 +42,6 @@ let counterMinuteTenID = setInterval(counterMinuteTen, 600000);
 fetch(url)
     .then(res => res.json())
     .then((todos) => {
-        const todosContainer = document.getElementById('preset-tasks');
-        const personalTodos = document.getElementById('personal-todo-list');
-        const todoPostForm = document.getElementById(`todo-form`)
         todos.forEach((todo) => {
             const li = document.createElement('li');
             li.classList.add("hover-test");

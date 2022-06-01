@@ -47,6 +47,7 @@ h4 {
 .block-style {
     background-color: #C18C5D;
     width: 400px;
+    overflow: scroll;
 }
 
 .block-style:hover {
@@ -70,10 +71,6 @@ h4 {
 
 .hover-test:not(:hover) {
     color: black;
-}
-
-#personal-container {
-    overflow: scroll;
 }
 
 .personal-list-li {

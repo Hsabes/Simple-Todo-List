@@ -15,14 +15,13 @@
             <nav id="preset-todo-list" class="block-style">
                 <h2>Preset Tasks</h2>
                 <h4>Click a task to add it to your To-Do list!</h4>
+                <form id="todo-form" for="input">
+                    <input id="custom-todo" class="form-input" name="input" type="text">
+                    <input id="button" class="form-input" type="submit" value="Add Custom Task">
+                </form>
                 <ul id="preset-tasks" class="list-style">
                     <!-- append preset to-do tasks from JSON database here -->
                 </ul>
-                <h4>Add a custom task!</h4>
-                <form id="todo-form">
-                    <input id="custom-todo" class="form-input" type="text">
-                    <input id="button" class="form-input" type="submit">
-                </form>
             </nav>
             <div id="personal-container" class="block-style">
                 <h2>Current Tasks</h2>
