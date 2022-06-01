@@ -2,8 +2,44 @@
 {
     "todos":[
         {
-            "id":1, 
-            "task":"clean the floor"
+            "id": 1, 
+            "task": "Clean the floor"
+        },
+        {
+            "id": 2,
+            "task": "Do laundry"
+        },
+        {
+            "id": 3,
+            "task": "Take the dog for a walk"
+        },
+        {
+            "id": 4,
+            "task": "Take trash out"
+        },
+        {
+            "id": 5,
+            "task": "Wash the car"
+        },
+        {
+            "id": 6,
+            "task": "Do the dishes"
+        },
+        {
+            "id": 7,
+            "task": "Vacuum"
+        },
+        {
+            "id": 8,
+            "task": "Mow the lawn"
+        },
+        {
+            "id": 9,
+            "task": "Call the in-laws"
+        },
+        {
+            "id": 10,
+            "task": "Meal-prep"
         }
     ]
 }
