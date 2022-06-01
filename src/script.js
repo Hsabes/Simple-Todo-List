@@ -1,3 +1,11 @@
+// On click of each individual <li>, append that <li> and it's text content to #personal-todo-list
+// create an event listener on each li.hover-test
+// on click, append it to #personal-todo-list 
+
+
+
+
+
 //Timer that counts upwards
 let counterOneID = setInterval(counterOne, 1000);
 let counterTenID = setInterval(counterTen, 10000);
@@ -10,32 +18,28 @@ fetch(url)
     .then(res => res.json())
     .then((todos) => {
         const todosContainer = document.getElementById('preset-tasks');
+        const personalTodos = document.getElementById('personal-todo-list');
         todos.forEach((todo) => {
             const li = document.createElement('li');
             li.classList.add("hover-test");
             todosContainer.append(li);
             li.textContent = todo.task;
+
+            li.addEventListener('click', () => {
+                removeButton = document.createElement('button');
+                removeButton.textContent = '❌';
+                liPersonal = document.createElement('li');
+                liPersonal.classList.add('personal-list-li');
+                liPersonal.textContent = todo.task;
+                liPersonal.append(removeButton);
+                personalTodos.append(liPersonal);
+
+                removeButton.addEventListener('click', (e) => {
+                    e.target.parentNode.remove();
+                })
+            })
         })
     })
-
-
-// function fetchTodos() {
-//     fetch(`http://localhost:3000/todos`)
-//         .then(res => res.json())
-//         .then(res => console.log(res))
-//         .then(todos => renderTodos(todos))
-// }
-
-// function renderTodos(todos) {
-//     const todosContainer = document.getElementById(`preset-tasks`)
-//         todos.forEach(
-//             todo => {
-//                 const li = document.createElement(`li.hover-test`)
-//                 todosContainer.append(li)
-//                 li.innerText = todo.task.innerText    
-//             }
-//         )
-// }
 
 function counterOne() {
     const counter = document.querySelector("#one-second");

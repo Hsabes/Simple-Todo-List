@@ -71,3 +71,22 @@ h4 {
 .hover-test:not(:hover) {
     color: black;
 }
+
+.personal-list-li {
+    font-size: 25px;
+}
+
+button {
+    margin-left: 10px;
+    opacity: 25%;
+}
+
+button:hover {
+    opacity: 100%;
+    transition: 0.25s;
+}
+
+button:not(:hover) {
+    opacity: 25%;
+    transition: 0.25s;
+}
