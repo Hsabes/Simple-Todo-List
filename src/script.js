@@ -1,10 +1,18 @@
 // On click of each individual <li>, append that <li> and it's text content to #personal-todo-list
 // create an event listener on each li.hover-test
 // on click, append it to #personal-todo-list 
+const todosContainer = document.getElementById('preset-tasks');
+const personalTodos = document.getElementById('personal-todo-list');
+const todoPostForm = document.getElementById(`todo-form`)
+const url = 'http://localhost:3000/todos'
 
 
 
-
+todoPostForm.addEventListener(`submit`, (e) => {
+    e.preventDefault();
+    const todoInput = document.getElementById(`custom-todo`)
+    fetch(url, {"method":"POST", "header":"application-json", "body":JSON.stringify(todoInput.value)})
+})
 
 //Timer that counts upwards
 let counterOneID = setInterval(counterOne, 1000);
@@ -12,19 +20,17 @@ let counterTenID = setInterval(counterTen, 10000);
 let counterMinuteOneID = setInterval(counterMinuteOne, 60000);
 let counterMinuteTenID = setInterval(counterMinuteTen, 600000);
 
-const url = 'http://localhost:3000/todos'
-
 fetch(url)
     .then(res => res.json())
     .then((todos) => {
         const todosContainer = document.getElementById('preset-tasks');
         const personalTodos = document.getElementById('personal-todo-list');
+        const todoPostForm = document.getElementById(`todo-form`)
         todos.forEach((todo) => {
             const li = document.createElement('li');
             li.classList.add("hover-test");
             todosContainer.append(li);
             li.textContent = todo.task;
-
             li.addEventListener('click', () => {
                 removeButton = document.createElement('button');
                 removeButton.textContent = '❌';
