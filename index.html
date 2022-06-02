@@ -25,17 +25,21 @@
             </nav>
             <div id="personal-container" class="block-style">
                 <h2>Current Tasks</h2>
-                <ul id="personal-todo-list" class="list-style">
+                <ol id="personal-todo-list" class="list-style">
                     <!-- append <li> tags here to add them to the list when clicked or submitted-->
-                </ul>
+                </ol>
             </div>
             <div id="timer" class="block-style">
                 <h2>Timer</h2> 
-                <h1 class="counter" id="ten-minute">0</h1> 
-                <h1 class="counter" id="one-minute">0</h1>
-                <h1 class="counter">:</h1>
-                <h1 class="counter" id="ten-second">0</h1> 
-                <h1 class="counter" id="one-second">0</h1>
+                <button id="start-button">Start Timer</button>
+                <div>
+                    <h1 class="counter" id="ten-minute">0</h1> 
+                    <h1 class="counter" id="one-minute">0</h1>
+                    <h1 id="counter-colon">:</h1>
+                    <h1 class="counter" id="ten-second">0</h1> 
+                    <h1 class="counter" id="one-second">0</h1>
+                </div>
+                <button id="reset-button">Reset</button>
             </div>
         </div>
     </body>

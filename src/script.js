@@ -4,6 +4,8 @@
 const todosContainer = document.getElementById('preset-tasks');
 const personalTodos = document.getElementById('personal-todo-list');
 const todoPostForm = document.getElementById(`todo-form`)
+const resetButton = document.getElementById('reset-button');
+const startButton = document.getElementById('start-button')
 const url = 'http://localhost:3000/todos'
 
 
@@ -27,7 +29,7 @@ todoPostForm.addEventListener(`submit`, (e) => {
         .then(response => response.json())
         .then(data => {
             const li = document.createElement('li');
-            li.classList.add("hover-test"); 
+            li.classList.add("hover-test");
             li.textContent = e.target.input.value;
             todosContainer.append(li);
             addToTasks(li);
@@ -48,25 +50,41 @@ fetch(url)
 
 function addToTasks(li) {
     li.addEventListener('click', () => {
-        removeButton = document.createElement('button');
+        const removeButton = document.createElement('button');
         removeButton.textContent = '❌';
-        liPersonal = document.createElement('li');
+        const prependButton = document.createElement('button');
+        prependButton.textContent = '⬆️'
+        const liPersonal = document.createElement('li');
         liPersonal.classList.add('personal-list-li');
         liPersonal.textContent = li.textContent;
         liPersonal.append(removeButton);
+        liPersonal.append(prependButton);
         personalTodos.append(liPersonal);
 
         removeButton.addEventListener('click', (e) => {
             e.target.parentNode.remove();
         })
+
+        prependButton.addEventListener('click', (e) => {
+            personalTodos.prepend(liPersonal);
+        })
+    
     })
 }
 
 //Timer that counts upwards
-let counterOneID = setInterval(counterOne, 1000);
-let counterTenID = setInterval(counterTen, 10000);
-let counterMinuteOneID = setInterval(counterMinuteOne, 60000);
-let counterMinuteTenID = setInterval(counterMinuteTen, 600000);
+
+let counterOneID;
+let counterTenID;
+let counterMinuteOneID;
+let counterMinuteTenID;
+
+startButton.addEventListener('click', () => {
+    counterOneID = setInterval(counterOne, 1000);
+    counterTenID = setInterval(counterTen, 10000);
+    counterMinuteOneID = setInterval(counterMinuteOne, 60000);
+    counterMinuteTenID = setInterval(counterMinuteTen, 600000);
+})
 
 function counterOne() {
     const counter = document.querySelector("#one-second");
@@ -80,6 +98,10 @@ function counterOne() {
     }
 
     counter.textContent = number;
+
+    resetButton.addEventListener('click', () => {
+        counter.textContent = 0;
+    })
 }
 
 function counterTen() {
@@ -94,6 +116,10 @@ function counterTen() {
     }
 
     counter.textContent = number;
+
+    resetButton.addEventListener('click', () => {
+        counter.textContent = 0;
+    })
 }
 
 function counterMinuteOne() {
@@ -108,6 +134,10 @@ function counterMinuteOne() {
     }
 
     counter.textContent = number;
+
+    resetButton.addEventListener('click', () => {
+        counter.textContent = 0;
+    })
 }
 
 function counterMinuteTen() {
@@ -122,5 +152,16 @@ function counterMinuteTen() {
     }
 
     counter.textContent = number;
+
+    resetButton.addEventListener('click', () => {
+        counter.textContent = 0;
+    })
+
 }
 
+resetButton.addEventListener('click', () => {
+    clearInterval(counterOneID);
+    clearInterval(counterTenID);
+    clearInterval(counterMinuteOneID);
+    clearInterval(counterMinuteTenID);
+})
