@@ -104,9 +104,14 @@ button:not(:hover) {
 }
 
 #reset-button {
-    opacity: 100%;
+    opacity: 0%;
 }
 
 #start-button {
     opacity: 100%;
+}
+
+#timer-desc {
+    margin-left: 10%;
+    margin-right: 10%;
 }
