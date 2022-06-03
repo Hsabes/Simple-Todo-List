@@ -2,20 +2,15 @@
 // create an event listener on each li.hover-test
 // on click, append it to #personal-todo-list 
 const todosContainer = document.getElementById('preset-tasks');
-const personalTodos = document.getElementById('personal-todo-list');
 const todoPostForm = document.getElementById(`todo-form`);
-const resetButton = document.getElementById('reset-button');
 const startButton = document.getElementById('start-button');
+const resetButton = document.getElementById('reset-button');
 const url = 'http://localhost:3000/todos'
 
 
 
 todoPostForm.addEventListener(`submit`, (e) => {
     e.preventDefault();
-    // const todoInput = document.getElementById(`custom-todo`)
-    // let taskInput = {
-    //     task: e.target.input.value
-    // }
     fetch(url, {
         method: "POST",
         headers: {
@@ -49,6 +44,7 @@ fetch(url)
     })
 
 function addToTasks(li) {
+    const personalTodos = document.getElementById('personal-todo-list');
     li.addEventListener('click', () => {
         const removeButton = document.createElement('button');
         removeButton.textContent = '❌';
@@ -73,6 +69,7 @@ function addToTasks(li) {
 }
 
 //Timer that counts upwards
+
 
 startButton.addEventListener('click', () => {
     let counterOneID;
@@ -168,5 +165,4 @@ function counterMinuteTen() {
     resetButton.addEventListener('click', () => {
         counter.textContent = 0;
     })
-
 }
