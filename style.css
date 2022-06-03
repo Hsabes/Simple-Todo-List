@@ -103,10 +103,14 @@ button:not(:hover) {
     color: blue;
 }
 
-#reset-button {
+#start-button {
     opacity: 100%;
 }
 
-#start-button {
-    opacity: 100%;
+#reset-button {
+    opacity: 0%;
+}
+
+#timer-desc {
+    margin: 10%;
 }
