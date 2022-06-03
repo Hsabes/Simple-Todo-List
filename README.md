@@ -1,6 +1,6 @@
 # PHASE 1 PROJECT: TASK APPLICATION
 
-Be able to use a timer and submit/remove tasks in a to-do list.
+Submit/remove tasks in a to-do list, and set a timer.
 
 ## Core Deliverables
 
@@ -13,7 +13,21 @@ Be able to use a timer and submit/remove tasks in a to-do list.
 
 - User can set a time to a timer that counts down
 
+## Group Agreement
+
+### Conflict Plan
+
+When differences in ideas arise, we will consider options based off of what we perceive to be the easiest solution.
+If the solution is unsuccessful, we proceed to the next one. When escalating conflicts are unsuccessful, we make another 
+solution until we obtain a correct one.
+
+### Communication Plan
+
+We will communicate with each other via Slack messages. To ensure everyone's voices are heard, we will ensure that 
+everyone has a chance to give their idea before any implementation is done. To create a safe environemnt where it would 
+help everyone feel comfortable speaking up, we will ask for opinions and encourage one another.
+
 ## Authors
 
 Phase 1 - West 05/16/22 Live
-Benjamin Kane, Harrison Sabean, Terrence Jung
+- Benjamin Kane, Harrison Sabean, Terrence Jung

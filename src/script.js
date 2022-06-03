@@ -84,8 +84,6 @@ startButton.addEventListener('click', () => {
     counterTenID = setInterval(counterTen, 10000);
     counterMinuteOneID = setInterval(counterMinuteOne, 60000);
     counterMinuteTenID = setInterval(counterMinuteTen, 600000);
-    resetButton.style.opacity = '100%';
-    startButton.style.opacity = '0%';
 })
 
 function counterOne() {
@@ -166,6 +164,4 @@ resetButton.addEventListener('click', () => {
     clearInterval(counterTenID);
     clearInterval(counterMinuteOneID);
     clearInterval(counterMinuteTenID);
-    resetButton.style.opacity = '0%';
-    startButton.style.opacity = '100%';
 })
