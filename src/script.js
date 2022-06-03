@@ -3,9 +3,9 @@
 // on click, append it to #personal-todo-list 
 const todosContainer = document.getElementById('preset-tasks');
 const personalTodos = document.getElementById('personal-todo-list');
-const todoPostForm = document.getElementById(`todo-form`)
+const todoPostForm = document.getElementById(`todo-form`);
 const resetButton = document.getElementById('reset-button');
-const startButton = document.getElementById('start-button')
+const startButton = document.getElementById('start-button');
 const url = 'http://localhost:3000/todos'
 
 
@@ -74,18 +74,28 @@ function addToTasks(li) {
 
 //Timer that counts upwards
 
-let counterOneID;
-let counterTenID;
-let counterMinuteOneID;
-let counterMinuteTenID;
-
 startButton.addEventListener('click', () => {
+    let counterOneID;
+    let counterTenID;
+    let counterMinuteOneID;
+    let counterMinuteTenID;
+    
     counterOneID = setInterval(counterOne, 1000);
     counterTenID = setInterval(counterTen, 10000);
     counterMinuteOneID = setInterval(counterMinuteOne, 60000);
     counterMinuteTenID = setInterval(counterMinuteTen, 600000);
     startButton.style.opacity = '0%';
     resetButton.style.opacity = '100%';
+
+
+    resetButton.addEventListener('click', () => {
+        clearInterval(counterOneID);
+        clearInterval(counterTenID);
+        clearInterval(counterMinuteOneID);
+        clearInterval(counterMinuteTenID);
+        startButton.style.opacity = '100%';
+        resetButton.style.opacity = '0%';
+    })
 })
 
 function counterOne() {
@@ -160,12 +170,3 @@ function counterMinuteTen() {
     })
 
 }
-
-resetButton.addEventListener('click', () => {
-    clearInterval(counterOneID);
-    clearInterval(counterTenID);
-    clearInterval(counterMinuteOneID);
-    clearInterval(counterMinuteTenID);
-    startButton.style.opacity = '100%';
-    resetButton.style.opacity = '0%';
-})
