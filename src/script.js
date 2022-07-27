@@ -26,6 +26,9 @@ todoPostForm.addEventListener(`submit`, (e) => {
             const li = document.createElement('li');
             li.classList.add("hover-test");
             li.textContent = e.target.input.value;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = '❌';
+            li.append(removeButton)
             todosContainer.append(li);
             addToTasks(li);
         })
