@@ -42,6 +42,9 @@ fetch(url)
             li.classList.add("hover-test");
             todosContainer.append(li);
             li.textContent = todo.task;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = '❌';
+            li.append(removeButton)
             addToTasks(li);
         })
     })
