@@ -5,7 +5,7 @@ const todosContainer = document.getElementById('preset-tasks');
 const todoPostForm = document.getElementById(`todo-form`);
 const startButton = document.getElementById('start-button');
 const resetButton = document.getElementById('reset-button');
-const url = 'http://localhost:3000/todos'
+const url = 'https://calm-hollows-09625.herokuapp.com/todos'
 
 
 
@@ -26,6 +26,9 @@ todoPostForm.addEventListener(`submit`, (e) => {
             const li = document.createElement('li');
             li.classList.add("hover-test");
             li.textContent = e.target.input.value;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = '❌';
+            li.append(removeButton)
             todosContainer.append(li);
             addToTasks(li);
         })
