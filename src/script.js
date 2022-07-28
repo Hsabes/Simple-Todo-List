@@ -52,7 +52,11 @@ fetch(url)
             addToTasks(li);
 
             removeButton.addEventListener('click', (e) => {
-                e.target.parentNode.remove();
+                fetch(url, {
+                    method: "DELETE"
+                })
+                .then(res => res.json())
+                .then(res => console.log(res))
             })
         })
     })
