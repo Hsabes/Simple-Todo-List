@@ -31,6 +31,10 @@ todoPostForm.addEventListener(`submit`, (e) => {
             li.append(removeButton)
             todosContainer.append(li);
             addToTasks(li);
+
+            removeButton.addEventListener('click', (e) => {
+                e.target.parentNode.remove();
+            })
         })
 })
 
@@ -46,6 +50,10 @@ fetch(url)
             removeButton.textContent = '❌';
             li.append(removeButton)
             addToTasks(li);
+
+            removeButton.addEventListener('click', (e) => {
+                e.target.parentNode.remove();
+            })
         })
     })
 
